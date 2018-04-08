@@ -1,0 +1,10 @@
+email :
+  user :
+    names : user-names
+  port : 22
+  name : email-name
+email-tencent :
+  user :
+    names : user-tencent-names
+  port : tencent-22
+  name : email-tencent-name
