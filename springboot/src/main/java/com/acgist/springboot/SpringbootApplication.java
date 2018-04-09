@@ -17,8 +17,9 @@ public class SpringbootApplication {
 	@Bean
 	public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
 	    InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-	    manager.createUser(User.withDefaultPasswordEncoder().username("user").password("user").roles("USER").build());
-	    manager.createUser(User.withDefaultPasswordEncoder().username("admin").password("admin").roles("ADMIN").build());
+//	    manager.createUser(User.withDefaultPasswordEncoder().username("user").password("user").roles("USER").build());
+//	    manager.createUser(User.withDefaultPasswordEncoder().username("admin").password("admin").roles("ADMIN").build());
+	    manager.createUser(User.withUsername("user").password("user").roles("USER").build());
 	    return manager;
 	}
 	
