@@ -38,6 +38,12 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo-registry-zookeeper</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.alibaba</groupId>
+					<artifactId>fastjson</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -56,6 +62,12 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo-serialization-hessian2</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.alibaba</groupId>
+					<artifactId>fastjson</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
