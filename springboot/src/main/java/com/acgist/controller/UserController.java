@@ -34,4 +34,9 @@ public class UserController {
 		return userService.findPage(page);
 	}
 	
+	@RequestMapping("/remove")
+	public void remove(String name) {
+		userService.remove(name);
+	}
+	
 }

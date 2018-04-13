@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" updateCheck="false">
+	<diskStore path="java.io.tmpdir" />
+	<!--
+	<cache name="user" maxElementsInMemory="1000" eternal="true" overflowToDisk="true" />
+	-->
+	<cache name="user" maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="600" overflowToDisk="true" />
+</ehcache>
