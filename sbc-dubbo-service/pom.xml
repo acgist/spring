@@ -28,43 +28,43 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-	
+
 		<!-- dubbo：http://dubbo.apache.org/books/dubbo-user-book/references/protocol/dubbo.html -->
-	       <dependency>
-	           <groupId>com.alibaba</groupId>
-	           <artifactId>dubbo-config-spring</artifactId>
-	       </dependency>
-	       <!-- 注册中心 -->
-	       <dependency>
-	           <groupId>com.alibaba</groupId>
-	           <artifactId>dubbo-registry-zookeeper</artifactId>
-	       </dependency>
-	       <dependency>
-	           <groupId>com.alibaba</groupId>
-	           <artifactId>dubbo-cluster</artifactId>
-	       </dependency>
-	       <!-- RPC协议 -->
-	       <dependency>
-	           <groupId>com.alibaba</groupId>
-	           <artifactId>dubbo-rpc-dubbo</artifactId>
-	       </dependency>
-	       <!-- 网络传输 -->
-	       <dependency>
-	           <groupId>com.alibaba</groupId>
-	           <artifactId>dubbo-remoting-netty</artifactId>
-	       </dependency>
 		<dependency>
-	           <groupId>com.alibaba</groupId>
-	           <artifactId>dubbo-serialization-hessian2</artifactId>
-	       </dependency>
-	       
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo-config-spring</artifactId>
+		</dependency>
+		<!-- 注册中心 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo-registry-zookeeper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo-cluster</artifactId>
+		</dependency>
+		<!-- RPC协议 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo-rpc-dubbo</artifactId>
+		</dependency>
+		<!-- 网络传输 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo-remoting-netty</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo-serialization-hessian2</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
