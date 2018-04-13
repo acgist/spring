@@ -11,4 +11,5 @@ public class SbcDubboServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SbcDubboServiceApplication.class, args);
 	}
+	
 }
