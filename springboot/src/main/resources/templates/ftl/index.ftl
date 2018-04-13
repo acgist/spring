@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FTL</title>
+<title>INDEX</title>
 </head>
 <body>
-FTL
+INDEX
 </body>
 </html>
