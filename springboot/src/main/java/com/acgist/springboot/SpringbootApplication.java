@@ -8,6 +8,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ * JAVA 10 请添加 --add-modules java.xml.bind
+ */
 @EnableCaching
 @SpringBootApplication
 @EnableTransactionManagement

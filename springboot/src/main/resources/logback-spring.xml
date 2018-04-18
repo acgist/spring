@@ -6,13 +6,11 @@
 	
 	<!-- 输出到控制台 -->
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
-		<!--
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-			<level>ERROR</level>
+			<level>INFO</level>
 		</filter>
-		-->
 		<encoder>
-			<pattern>[springboot] %d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<pattern>[springboot] %d{YYYY-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
 		</encoder>
 	</appender>
 
@@ -23,13 +21,13 @@
 			<FileNamePattern>E:/tmp/%d{yyyy-MM-dd}/%d{yyyy-MM-dd}.log</FileNamePattern>
 		</rollingPolicy>
 		<layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>[springboot] %d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+			<Pattern>[springboot] %d{YYYY-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</Pattern>
 		</layout>
 	</appender>
-
+	
 	<root level="DEBUG">
-		<appender-ref ref="console" />
 		<appender-ref ref="file" />
+		<appender-ref ref="console" />
 	</root>
 	
 </configuration>
