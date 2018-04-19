@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 public class RestTemplateBalance {
 
 	@Bean
-	@LoadBalanced
+	@LoadBalanced // 负载均衡
 	RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
