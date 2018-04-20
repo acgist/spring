@@ -17,6 +17,8 @@ public class APIController {
 	
 	@RequestMapping(value = "/date", method = RequestMethod.GET)
 	public String date() {
+		final String name = this.name == null ? "当前只有一个服务提供者" : this.name;
+		
 		return name + "，当前时间：" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 	}
 	
