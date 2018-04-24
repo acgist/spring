@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.ComponentScan;
 
-@EnableEurekaClient
+@EnableEurekaClient // 服务提供者
 @SpringBootApplication
 @ComponentScan(basePackages = { "com" })
 public class EscEurekaServiceApplication {

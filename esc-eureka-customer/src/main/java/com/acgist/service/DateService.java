@@ -20,6 +20,7 @@ public class DateService {
 	}
 	
 	@HystrixCommand(fallbackMethod = "dateFail")
+//	@HystrixCommand(fallbackMethod = "dateFail", commandKey = "dataV2", groupKey = "data", threadPoolKey = "data")
 	public String dateV2() {
 		return restTemplate.getForEntity(apiBuilder.buildAPIURL4Date(), String.class).getBody();
 	}
@@ -33,5 +34,14 @@ public class DateService {
 	public String dateFail() {
 		return "服务调用失败，服务降级，回滚中";
 	}
+	
+//	@CacheResult // 注解
+//	public String cache(@CacheKey String value) {
+//		return null;
+//	}
+	
+//	@CacheRemove(commandKey = "cache")
+//	public void remove(@CacheKey String value) {
+//	}
 	
 }

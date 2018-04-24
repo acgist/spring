@@ -1,0 +1,6 @@
+EUREKA消费者-Hystrix仪表盘
+仪表盘地址：http://localhost:9999/hystrix
+监控流（需要打开端点）：http://localhost:9999/actuator/hystrix.stream
+需要访问有@HystrixCommand注解的才有监控数据：http://localhost:9999/v2/date
+spring-cloud-starter-netflix-hystrix-dashboard可以不使用，使用esc-dureka-turbine的仪表盘进行展示
+spring-cloud-starter-stream-rabbit和spring-cloud-starter-netflix-turbine-stream是使用rabbitMQ进行消息传递，可以不使用直接监控http://localhost:9999/actuator/hystrix.stream或者http://localhost:8989/turbine.stream
