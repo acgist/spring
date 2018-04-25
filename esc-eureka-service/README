@@ -1,1 +1,5 @@
 EUREKA服务提供者
+访问链接：
+	http://localhost:8888/api/date
+	http://localhost:8888/api/user/name?name=acgist
+	

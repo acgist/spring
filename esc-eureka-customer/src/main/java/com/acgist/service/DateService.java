@@ -32,7 +32,7 @@ public class DateService {
 	 * 		抛出异常时
 	 */
 	public String dateFail() {
-		return "服务调用失败，服务降级，回滚中";
+		return "服务调用失败，服务降级，回滚中...";
 	}
 	
 //	@CacheResult // 注解

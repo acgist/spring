@@ -1,0 +1,6 @@
+访问链接：
+	http://localhost:5555/service/api/date?token=token
+	http://localhost:5555/esc-eureka-service/api/date?token=token
+	http://localhost:5555/esc-eureka-service/api/user/name?token=token&name=acgist
+	http://localhost:5555/esc-eureka-customer/date?token=token
+	http://localhost:5555/esc-eureka-customer/user/name?token=token&name=acgist

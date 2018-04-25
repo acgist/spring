@@ -1,14 +1,12 @@
 package com.acgist.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "esc-eureka-service")
-public interface IUserService {
+import com.acgist.api.APIUserService;
 
-	@RequestMapping(value = "/api/user/name", method = RequestMethod.GET)
-	String userName(@RequestParam("name") String name);
-	
+//@FeignClient(name = "esc-eureka-service")
+@FeignClient(name = "esc-eureka-service", fallback = UserServiceFallback.class)
+//@FeignClient(name = "esc-eureka-service", fallbackFactory = UserServiceFallbackFactory.class)
+public interface IUserService extends APIUserService {
+
 }
