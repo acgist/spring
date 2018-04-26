@@ -2,6 +2,8 @@ package com.acgist.filter;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.stereotype.Component;
+
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
@@ -14,7 +16,7 @@ import com.netflix.zuul.exception.ZuulException;
  * 	}
  * 非常重要：zuulfilter并不是拦截所有的请求，而是只拦截routes路由的请求
  */
-//@Component
+@Component
 public class AuthoFilter extends ZuulFilter {
 
 	@Override

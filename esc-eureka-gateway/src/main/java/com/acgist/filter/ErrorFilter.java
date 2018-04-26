@@ -1,20 +1,19 @@
 package com.acgist.filter;
 
-import javax.servlet.http.HttpServletResponse;
+import org.springframework.stereotype.Component;
 
 import com.netflix.zuul.ZuulFilter;
-import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
-//@Component
+/**
+ * SendErrorFilter已经改为error，并且执行的顺序是0
+ */
+@Component
 public class ErrorFilter extends ZuulFilter {
 
 	@Override
 	public Object run() throws ZuulException {
-		RequestContext ctx = RequestContext.getCurrentContext();
-		ctx.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-		ctx.set("error.exception", ctx.getThrowable());
-		ctx.set("error.message", ctx.getThrowable().getMessage());
+		System.out.println("----------------ERROR----------------");
 		return null;
 	}
 
@@ -25,7 +24,7 @@ public class ErrorFilter extends ZuulFilter {
 
 	@Override
 	public int filterOrder() {
-		return 10;
+		return -1;
 	}
 
 	@Override
