@@ -1,0 +1,1 @@
+/templates/ftl/error.ftl

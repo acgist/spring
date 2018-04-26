@@ -6,6 +6,15 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
+/**
+ * 如果不是用@Component注解可以使用下面的方法进行配置
+ * @Bean
+ * 	public AuthoFilter authoFilter() {
+ * 		return new AuthoFilter();
+ * 	}
+ * 非常重要：zuulfilter并不是拦截所有的请求，而是只拦截routes路由的请求
+ */
+//@Component
 public class AuthoFilter extends ZuulFilter {
 
 	@Override
@@ -17,6 +26,8 @@ public class AuthoFilter extends ZuulFilter {
 			ctx.setSendZuulResponse(false);
 			ctx.setResponseStatusCode(401);
 			ctx.setResponseBody("miss token");
+		} else if(token.equals("error")) {
+			throw new RuntimeException("系统异常！");
 		}
 		return null;
 	}
@@ -28,7 +39,7 @@ public class AuthoFilter extends ZuulFilter {
 
 	@Override
 	public int filterOrder() {
-		return 0;
+		return 10;
 	}
 
 	/**

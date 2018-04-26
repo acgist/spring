@@ -15,7 +15,7 @@ public class EmailController {
 	private EmailConfig emailConfig;
 	
 	@RequestMapping("/email")
-	public String test() {
+	public String email() {
 //		return env.getProperty("email.port");
 		return "PORT：" + emailConfig.getPort() +
 				"，NAME：" + emailConfig.getName() +
