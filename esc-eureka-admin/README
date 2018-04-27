@@ -1,0 +1,4 @@
+SPRING BOOT ADMIN
+监控
+动态设置变量应该是需要配置安全账号，没有测试
+hystrix-ui和turbine-ui 2.x的版本还没有出来
