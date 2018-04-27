@@ -13,4 +13,8 @@ public class APIBuilder {
 		return escEurekaService + "/api/date";
 	}
 	
+	public String buildAPIURL4Retry() {
+		return escEurekaService + "/api/retry";
+	}
+	
 }

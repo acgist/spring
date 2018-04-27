@@ -3,3 +3,5 @@ EUREKA消费者
 	http://localhost:9999/date
 	http://localhost:9999/v2/date
 	http://localhost:9999/user/name
+
+重试只有feign客户端才有效果

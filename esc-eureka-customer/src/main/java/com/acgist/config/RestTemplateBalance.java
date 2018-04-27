@@ -12,6 +12,10 @@ public class RestTemplateBalance {
 	@LoadBalanced // 负载均衡
 	RestTemplate restTemplate() {
 		return new RestTemplate();
+//		SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
+//		factory.setConnectTimeout(1000);
+//		factory.setReadTimeout(2000);
+//		return new RestTemplate(factory);
 	}
 	
 }

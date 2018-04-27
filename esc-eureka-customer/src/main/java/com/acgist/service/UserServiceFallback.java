@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * 实现熔断器逻辑
  */
 @Component
-@RequestMapping("/fallback/api") // 防止出现requestMappingHandlerMapping重复异常
+@RequestMapping("/fallback/api")
 public class UserServiceFallback implements IUserService {
 
 	@Override
