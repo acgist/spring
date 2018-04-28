@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.acgist.config.UserEntity;
 import com.acgist.config.ZuulFilterConfig;
 
 @RefreshScope // 刷新需要配置此注解
@@ -31,7 +31,6 @@ public class AdminController {
 		throw new RuntimeException("发生异常");
 	}
 	
-	@ResponseBody
 	@RequestMapping("/system/vars")
 	public String systemAcgistName() {
 		return systemAcgistName + "<br />" +
@@ -39,10 +38,17 @@ public class AdminController {
 				config.getRoot();
 	}
 	
-	@ResponseBody
 	@RequestMapping("/refresh")
 	public String refresh() {
 		return systemAcgistName;
+	}
+	
+	@RequestMapping("/user")
+	public UserEntity user() {
+		UserEntity user = new UserEntity();
+		user.setName("acgist");
+		user.setAge(20);
+		return user;
 	}
 	
 }

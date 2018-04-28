@@ -45,6 +45,20 @@ public class MainTest {
 	}
 	
 	/**
+	 * 动态刷新配置
+	 */
+	@Test
+	public void busRefresh() throws IOException, InterruptedException {
+		HttpClient client = HttpClient.newHttpClient();
+		HttpRequest post = HttpRequest.newBuilder(URI.create("http://localhost:5555/actuator/bus-refresh")).header("accept", MediaType.APPLICATION_JSON_VALUE).POST(BodyPublisher.fromString("")).build();
+//		注意转义
+//		HttpRequest post = HttpRequest.newBuilder(URI.create("http://localhost:5555/actuator/bus-refresh/esc-eureka-gateway%3a5555")).header("accept", MediaType.APPLICATION_JSON_VALUE).POST(BodyPublisher.fromString("")).build();
+//		HttpRequest post = HttpRequest.newBuilder(URI.create("http://localhost:5555/actuator/bus-refresh/esc-eureka-gateway%3a**")).header("accept", MediaType.APPLICATION_JSON_VALUE).POST(BodyPublisher.fromString("")).build();
+		HttpResponse<String> resp = client.send(post, HttpResponse.BodyHandler.asString());
+		System.out.println(resp);
+	}
+	
+	/**
 	 * 服务下线
 	 */
 	@Test
@@ -52,6 +66,18 @@ public class MainTest {
 		HttpClient client = HttpClient.newHttpClient();
 		HttpRequest post = HttpRequest.newBuilder(URI.create("http://localhost:5555/actuator/shutdown")).header("accept", MediaType.APPLICATION_JSON_VALUE).POST(BodyPublisher.fromString("")).build();
 		HttpResponse<String> resp = client.send(post, HttpResponse.BodyHandler.asString());
+		System.out.println(resp);
+		System.out.println(resp.body());
+	}
+	
+	/**
+	 * 服务下线
+	 */
+	@Test
+	public void user() throws IOException, InterruptedException {
+		HttpClient client = HttpClient.newHttpClient();
+		HttpRequest get = HttpRequest.newBuilder(URI.create("http://localhost:5555/admin/user")).header("accept", MediaType.APPLICATION_JSON_VALUE).GET().build();
+		HttpResponse<String> resp = client.send(get, HttpResponse.BodyHandler.asString());
 		System.out.println(resp);
 		System.out.println(resp.body());
 	}
