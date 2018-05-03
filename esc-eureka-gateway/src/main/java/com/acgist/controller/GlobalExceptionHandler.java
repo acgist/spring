@@ -27,6 +27,7 @@ public class GlobalExceptionHandler {
 		Map<String, String> data = new HashMap<String, String>();
 		data.put("code", "9999");
 		data.put("message", "全局异常处理");
+		e.printStackTrace();
 		return data;
 //		return ResponseEntity.status(200).contentType(MediaType.APPLICATION_JSON_UTF8).body(data);
 	}

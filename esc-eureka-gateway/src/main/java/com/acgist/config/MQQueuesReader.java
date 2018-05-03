@@ -13,9 +13,24 @@ import org.springframework.stereotype.Component;
 public class MQQueuesReader {
 
 	@RabbitHandler
+//	@RabbitListener(bindings = @QueueBinding(exchange = @Exchange(name = "acgist.demo", type = ExchangeTypes.TOPIC), value = @Queue(name = "acgist.demo.send.queue"), key = "send"))
 	@RabbitListener(bindings = @QueueBinding(exchange = @Exchange(name = "acgist.demo", type = ExchangeTypes.FANOUT), value = @Queue(name = "acgist.demo.send.queue"), key = "send"))
-	public void process(Message message) {
-		System.out.println("收到信息：" + new String(message.getBody()));
+	public void process1(Message message) {
+		System.out.println("通道1收到信息：" + new String(message.getBody()));
+	}
+	
+	@RabbitHandler
+//	@RabbitListener(bindings = @QueueBinding(exchange = @Exchange(name = "acgist.demo", type = ExchangeTypes.TOPIC), value = @Queue(name = "acgist.demo.send.queue"), key = "send"))
+	@RabbitListener(bindings = @QueueBinding(exchange = @Exchange(name = "acgist.demo", type = ExchangeTypes.FANOUT), value = @Queue(name = "acgist.demo.send.queue"), key = "send"))
+	public void process2(Message message) {
+		System.out.println("通道2收到信息：" + new String(message.getBody()));
+	}
+	
+	@RabbitHandler
+//	@RabbitListener(bindings = @QueueBinding(exchange = @Exchange(name = "acgist.demo", type = ExchangeTypes.TOPIC), value = @Queue(name = "acgist.demo.send.queueAll"), key = "send"))
+	@RabbitListener(bindings = @QueueBinding(exchange = @Exchange(name = "acgist.demo", type = ExchangeTypes.FANOUT), value = @Queue(name = "acgist.demo.send.queueAll"), key = "send"))
+	public void processAll(Message message) {
+		System.out.println("通道All收到信息：" + new String(message.getBody()));
 	}
 	
 }
