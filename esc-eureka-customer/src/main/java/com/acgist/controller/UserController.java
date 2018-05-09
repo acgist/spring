@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.acgist.service.IUserService;
 import com.acgist.service.UserServiceFeign;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 public class UserController {
 	
@@ -23,6 +26,8 @@ public class UserController {
 		return userService.userName(name);
 	}
 	
+	@ApiOperation(value = "查询用户重试", notes = "查询用户重试")
+	@ApiImplicitParam(name = "name", value = "当值为retry时，将会休眠10秒展示重试效果", type = "string")
 	@RequestMapping(value = "/user/name/retry", method = RequestMethod.GET)
 	public String userNameRetry(String name) {
 		name = StringUtils.isEmpty(name) ? "测试" : name;
